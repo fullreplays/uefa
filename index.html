@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maç Sayfası</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden { display: none; }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Logo -->
+  <header class="bg-white py-4 shadow">
+    <div class="container mx-auto px-4">
+      <img src="logo.png" alt="Logo" class="h-12">
+    </div>
+  </header>
+
+  <!-- Başlık -->
+  <section class="text-center my-6">
+    <h1 class="text-3xl font-bold uppercase text-gray-800">BAŞLIK</h1>
+  </section>
+
+  <!-- Filtreler -->
+  <section class="text-center mb-6">
+    <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded mx-1" data-category="all">TÜMÜ</button>
+    <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded mx-1" data-category="uefa">UEFA</button>
+    <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded mx-1" data-category="laliga">La Liga</button>
+    <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded mx-1" data-category="premier">Premier League</button>
+  </section>
+
+  <!-- Maç Kutucukları -->
+  <section class="container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- UEFA Maçı -->
+      <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="match1.jpg" alt="UEFA Maçı" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-gray-800">UEFA Maçı</h2>
+        <p class="text-sm text-gray-600">Grup aşaması 3. hafta</p>
+        <p class="text-sm text-gray-500 mt-1">01 Nisan 2025</p>
+      </div>
+      <!-- La Liga Maçı -->
+      <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="laliga">
+        <img src="match2.jpg" alt="La Liga Maçı" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-gray-800">La Liga Derbisi</h2>
+        <p class="text-sm text-gray-600">Real Madrid vs Barcelona</p>
+        <p class="text-sm text-gray-500 mt-1">02 Nisan 2025</p>
+      </div>
+      <!-- Premier League Maçı -->
+      <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="premier">
+        <img src="match3.jpg" alt="Premier League Maçı" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-gray-800">Premier League</h2>
+        <p class="text-sm text-gray-600">Manchester United vs Chelsea</p>
+        <p class="text-sm text-gray-500 mt-1">03 Nisan 2025</p>
+      </div>
+      <!-- UEFA Maçı -->
+      <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="match4.jpg" alt="UEFA Maçı" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-gray-800">UEFA Son 16</h2>
+        <p class="text-sm text-gray-600">Maç özeti ve goller</p>
+        <p class="text-sm text-gray-500 mt-1">04 Nisan 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const matchBoxes = document.querySelectorAll('.match-box');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.dataset.category;
+
+        // Buton stillerini güncelle
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white');
+          btn.classList.add('bg-gray-300', 'text-gray-800');
+        });
+        button.classList.add('bg-blue-600', 'text-white');
+        button.classList.remove('bg-gray-300', 'text-gray-800');
+
+        // Maçları filtrele
+        matchBoxes.forEach(box => {
+          if (category === 'all' || box.dataset.category === category) {
+            box.classList.remove('hidden');
+          } else {
+            box.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
