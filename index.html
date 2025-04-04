@@ -9,91 +9,119 @@
     .hidden { display: none; }
   </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-900 text-gray-100 font-sans">
   <!-- Logo -->
-  <header class="bg-white py-4 shadow">
-    <div class="container mx-auto px-4">
+  <header class="bg-gray-800 py-4 shadow">
+    <div class="container mx-auto px-4 flex justify-between items-center">
       <img src="logo.png" alt="Logo" class="h-12">
+      <!-- Dark Mode Toggle Button -->
+      <button id="darkModeToggle" class="bg-gray-700 text-white px-4 py-2 rounded">
+        Dark Mode
+      </button>
     </div>
   </header>
 
   <!-- Başlık -->
   <section class="text-center my-6">
-    <h1 class="text-3xl font-bold text-gray-800">UEFA Nations League</h1>
+    <h1 class="text-3xl font-bold text-gray-100">UEFA Nations League</h1>
   </section>
 
-<!-- Maç Kutucukları -->
-<section class="container mx-auto px-4">
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <!-- Ireland vs England -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="ireland_vs_england.jpg" alt="Ireland vs England" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">Ireland vs England</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">7 Eylül 2024</p>
+  <!-- Filtreler -->
+  <section class="text-center mb-6">
+    <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded mx-1" data-category="all">TÜMÜ</button>
+    <button class="filter-btn bg-gray-700 text-white px-4 py-2 rounded mx-1" data-category="uefa">UEFA</button>
+    <button class="filter-btn bg-gray-700 text-white px-4 py-2 rounded mx-1" data-category="laliga">La Liga</button>
+    <button class="filter-btn bg-gray-700 text-white px-4 py-2 rounded mx-1" data-category="premier">Premier League</button>
+  </section>
+
+  <!-- Maç Kutucukları -->
+  <section class="container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Ireland vs England -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="ireland_vs_england.jpg" alt="Ireland vs England" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">Ireland vs England</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">7 Eylül 2024</p>
+      </div>
+      <!-- Belgium vs Israel -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="belgium_vs_israel.jpg" alt="Belgium vs Israel" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">Belgium vs Israel</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">6 Eylül 2024</p>
+      </div>
+      <!-- France vs Italy -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="france_vs_italy.jpg" alt="France vs Italy" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">France vs Italy</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">6 Eylül 2024</p>
+      </div>
+      <!-- Wales vs Turkey -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="wales_vs_turkey.jpg" alt="Wales vs Turkey" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">Wales vs Turkey</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">6 Eylül 2024</p>
+      </div>
+      <!-- Kazakhstan vs Norway -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="kazakhstan_vs_norway.jpg" alt="Kazakhstan vs Norway" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">Kazakhstan vs Norway</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">6 Eylül 2024</p>
+      </div>
+      <!-- Portugal vs Croatia -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="portugal_vs_croatia.jpg" alt="Portugal vs Croatia" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">Portugal vs Croatia</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">5 Eylül 2024</p>
+      </div>
+      <!-- Scotland vs Poland -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="scotland_vs_poland.jpg" alt="Scotland vs Poland" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">Scotland vs Poland</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">5 Eylül 2024</p>
+      </div>
+      <!-- Denmark vs Switzerland -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="denmark_vs_switzerland.jpg" alt="Denmark vs Switzerland" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">Denmark vs Switzerland</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">5 Eylül 2024</p>
+      </div>
+      <!-- Serbia vs Spain -->
+      <div class="match-box bg-gray-800 shadow-md rounded-lg p-4" data-category="uefa">
+        <img src="serbia_vs_spain.jpg" alt="Serbia vs Spain" class="w-full h-40 object-cover rounded">
+        <h2 class="mt-4 font-bold text-lg text-white">Serbia vs Spain</h2>
+        <p class="text-sm text-gray-300">UEFA Nations League Maçı</p>
+        <p class="text-sm text-gray-400 mt-1">5 Eylül 2024</p>
+      </div>
     </div>
-    <!-- Belgium vs Israel -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="belgium_vs_israel.jpg" alt="Belgium vs Israel" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">Belgium vs Israel</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">6 Eylül 2024</p>
-    </div>
-    <!-- France vs Italy -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="france_vs_italy.jpg" alt="France vs Italy" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">France vs Italy</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">6 Eylül 2024</p>
-    </div>
-    <!-- Wales vs Turkey -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="wales_vs_turkey.jpg" alt="Wales vs Turkey" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">Wales vs Turkey</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">6 Eylül 2024</p>
-    </div>
-    <!-- Kazakhstan vs Norway -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="kazakhstan_vs_norway.jpg" alt="Kazakhstan vs Norway" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">Kazakhstan vs Norway</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">6 Eylül 2024</p>
-    </div>
-    <!-- Portugal vs Croatia -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="portugal_vs_croatia.jpg" alt="Portugal vs Croatia" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">Portugal vs Croatia</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">5 Eylül 2024</p>
-    </div>
-    <!-- Scotland vs Poland -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="scotland_vs_poland.jpg" alt="Scotland vs Poland" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">Scotland vs Poland</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">5 Eylül 2024</p>
-    </div>
-    <!-- Denmark vs Switzerland -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="denmark_vs_switzerland.jpg" alt="Denmark vs Switzerland" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">Denmark vs Switzerland</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">5 Eylül 2024</p>
-    </div>
-    <!-- Serbia vs Spain -->
-    <div class="match-box bg-white shadow-md rounded-lg p-4" data-category="uefa">
-      <img src="serbia_vs_spain.jpg" alt="Serbia vs Spain" class="w-full h-40 object-cover rounded">
-      <h2 class="mt-4 font-bold text-lg text-gray-800">Serbia vs Spain</h2>
-      <p class="text-sm text-gray-600">UEFA Nations League Maçı</p>
-      <p class="text-sm text-gray-500 mt-1">5 Eylül 2024</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <script>
     const filterButtons = document.querySelectorAll('.filter-btn');
     const matchBoxes = document.querySelectorAll('.match-box');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    let darkMode = true;
+
+    // Dark Mode Toggle
+    darkModeToggle.addEventListener('click', () => {
+      darkMode = !darkMode;
+      if (darkMode) {
+        document.body.classList.add('bg-gray-900', 'text-gray-100');
+        document.body.classList.remove('bg-gray-100', 'text-gray-800');
+        darkModeToggle.textContent = 'Dark Mode';
+      } else {
+        document.body.classList.add('bg-gray-100', 'text-gray-800');
+        document.body.classList.remove('bg-gray-900', 'text-gray-100');
+        darkModeToggle.textContent = 'Light Mode';
+      }
+    });
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
@@ -102,10 +130,10 @@
         // Buton stillerini güncelle
         filterButtons.forEach(btn => {
           btn.classList.remove('bg-blue-600', 'text-white');
-          btn.classList.add('bg-gray-300', 'text-gray-800');
+          btn.classList.add('bg-gray-700', 'text-white');
         });
         button.classList.add('bg-blue-600', 'text-white');
-        button.classList.remove('bg-gray-300', 'text-gray-800');
+        button.classList.remove('bg-gray-700', 'text-white');
 
         // Maçları filtrele
         matchBoxes.forEach(box => {
